@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================= REALISTIC SUN ARC ================= */
+
+/* Sun moves on a smooth semi-circle */
+@keyframes sun-arc {
+  0% {
+    transform: translate(0px, 200px);
+    opacity: 1;
+  }
+  16.66% { transform: translate(100px, 150px); opacity: 1; }   /* 30deg */
+  33.33% { transform: translate(200px, 100px); opacity: 1; }   /* 60deg */
+  50% { transform: translate(50vw, 50px); opacity: 1; }        /* 90deg - Noon */
+  66.66% { transform: translate(80vw, 100px); opacity: 1; }    /* 120deg */
+  83.33% { transform: translate(90vw, 150px); opacity: 1; }    /* 150deg */
+  100% { transform: translate(100vw, 200px); opacity: 0; }     /* 180deg - Sunset */
+}
+
+.sun-arc {
+  animation: sun-arc 8s linear infinite; /* 4s rise, 4s set */
+}
+
+/* ================= NIGHT SKY ================= */
+@keyframes sky-night {
+  0%, 66.66% { opacity: 0; }    /* Day time */
+  66.66%, 100% { opacity: 1; }  /* Night time */
+}
+
+.sky-night {
+  animation: sky-night 12s linear infinite;
+}
+
+/* ================= STREET LIGHT ================= */
+@keyframes light-on {
+  0%, 66.66% { opacity: 0; }    /* Day off */
+  66.66%, 100% { opacity: 1; }  /* Night on */
+}
+
+.light-night {
+  animation: light-on 12s linear infinite;
+}
+
+/* ================= WIND TURBINES ================= */
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spin-slow {
+  animation: spin-slow 6s linear infinite;
+  transform-origin: center;
+}
+
