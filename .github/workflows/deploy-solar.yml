@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 18
@@ -24,7 +24,7 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy dist to Hostinger
+      - name: Deploy dist to Hostinger (CORRECT PATH)
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.HOST }}
@@ -32,6 +32,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           source: "dist/*"
-          target: "public_html/solar"
+          target: "domains/tradesyndicate.in/public_html/solar"
           rm: true
           use_insecure_cipher: true
+
