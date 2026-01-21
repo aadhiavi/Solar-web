@@ -43,7 +43,7 @@ const Navbar = () => {
                         <div className="flex items-center space-x-2">
                             <Sun className={`w-8 h-8 ${isScrolled || isOpen ? 'text-emerald-600' : 'text-emerald-400'}`} />
                             <span className="text-2xl font-bold tracking-wide">
-                                Trade<span className={isScrolled || isOpen ? 'text-emerald-600' : 'text-emerald-400'}>Solar</span>
+                                Selah<span className={isScrolled || isOpen ? 'text-emerald-600' : 'text-emerald-400'}>Solar</span>
                             </span>
                         </div>
 
