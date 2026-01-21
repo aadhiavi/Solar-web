@@ -24,7 +24,7 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy dist to Hostinger (CORRECT PATH)
+      - name: Deploy dist to Hostinger
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.HOST }}
@@ -33,6 +33,7 @@ jobs:
           port: ${{ secrets.PORT }}
           source: "dist/*"
           target: "domains/tradesyndicate.in/public_html/solar"
+          strip_components: 1
           rm: true
           use_insecure_cipher: true
 
